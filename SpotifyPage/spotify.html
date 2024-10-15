@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="spotifystyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        labelarray=[["Liked Songs","Adi-68 songs","Don't Let Me Down","Night Changes","High Hopes","Yummy","Ghost"],["Justin bieber","Justin Special","Baby","What do you mean","Boyfriend","Yummy","Ghost"],
+                    ["Your Top Liked Songs","Your Nostalgia","Obsessed","Dynasty","Little Did I Know","Dura","Despacito"],["Discover Weekly","Weekly playlist","Carnival","Perfect","Bad Games","Six Days","Roadmap"],
+                    ["Selena Gomez","Selena's favourite","Fetish","It ani't me","Single Soon","We don't talk anymore","Bad Liar"],["Miley Cyrus","Old hits","Wrecking Ball","Flower","Slide Away","The Climb","We can't stop"],
+                    ["Daily Beats","Uplifting songs","Paradise","Stereo Love","High Hopes","Hawaii","Bad Boy"],["Rihanna","Classics","Rude Girl","Umbrella","New York","Diamonds","We Found Love"],
+                    ["Lisa","Korean Pop","Money","Lalisa","Rockstar","Shoong!","Lovesick Girls"],["Your Top Songs 2020","Retro Pop","Money","Lalisa","Rockstar","Tik Tok","Lovesick Girls"]]
+        album=["/Users/Aditya/Downloads/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg","/Users/Aditya/Downloads/ab6761610000e5eb8ae7f2aaa9817a704a87ea36.jpeg","/Users/Aditya/Downloads/worst-album-covers-2023.jpeg",
+               "/Users/Aditya/Downloads/ZGlkaWRpZGlkaWRpZGlkaQ==.jpeg","/Users/Aditya/Downloads/ab6761610000e5ebc3c753851496854e29abff7a.jpeg","/Users/Aditya/Downloads/ab67706c0000da840a717a4e4c15864ab3950bf5.jpeg",
+               "/Users/Aditya/Downloads/ab67616d0000b2736c0a7c1ea8020cb423180b95.jpeg","/Users/Aditya/Downloads/ab67616d00001e02bef074de9ca825bddaeb9f46.jpeg","/Users/Aditya/Downloads/ab67616d00001e02330f11fb125bb80b760f9e19.jpeg",
+               "/Users/Aditya/Downloads/ab67616d00001e020ebf69c32c755aba5e839b8e.jpeg"]
+        function erase(n)
+        {
+            document.getElementById("main1").style.display="none"
+            document.getElementById("main2").style.display="grid"
+            document.getElementById("p1").innerHTML=labelarray[n-1][0]
+            document.getElementById("p2").innerHTML=labelarray[n-1][1]
+            document.getElementById("p3").innerHTML=labelarray[n-1][2]
+            document.getElementById("p4").innerHTML=labelarray[n-1][3]
+            document.getElementById("p5").innerHTML=labelarray[n-1][4]
+            document.getElementById("p6").innerHTML=labelarray[n-1][5]
+            document.getElementById("p7").innerHTML=labelarray[n-1][6]
+            document.getElementById("albumphoto").src=album[n-1]
+        }
+        function setpage()
+        {
+             document.getElementById("main2").style.display="none"
+        }
+        function back()
+        {
+            document.getElementById("main2").style.display="none"
+            document.getElementById("main1").style.display="grid"
+        }
+        function forward()
+        {
+            document.getElementById("main1").style.display="none"
+            document.getElementById("main2").style.display="grid"
+        }
+        function playaudio()
+        {
+              document.getElementById("songaudio").src="/Users/Aditya/Downloads/Don't Let Me Down (feat. Daya) (Hipst3r Edit).wav"
+        }
+    </script>
+</head>
+<body onload="setpage()">
+    <section>
+        <div class="hero">
+            <div class="hero1">
+                <div class="homesearch">
+                    <div class="homesearch1">
+                        <div class="homesearch1-img">
+                            <i class='bx bxs-home'></i>
+                        </div>
+                        <div class="homesearch1-text">Home</div>
+                    </div>
+                    <div class="homesearch2">
+                        <div class="homesearch2-img">
+                            <i class='bx bx-search' ></i>
+                        </div>
+                        <div class="homesearch2-text">Search</div>
+                    </div>
+                </div>
+                <div class="yourlibrary">
+                    <div class="library">
+                        Your Library
+                    </div>
+                    <div class="lib-button">
+                        <div class="lib-button1">
+                            <div>Artists</div>
+                            <div>Playlist</div>
+                        </div>
+                    </div>
+                    <div onclick="erase(1)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-img">
+                                <img src="/Users/Aditya/Downloads/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Liked Songs</h2>
+                            <p>Playlist-198songs</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(2)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5eb8ae7f2aaa9817a704a87ea36.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Justin Bieber</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(8)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab67616d00001e02bef074de9ca825bddaeb9f46.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Rihanna</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(9)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab67616100005174f079b411705b38460bf575e6.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Lisa</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(3)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-img">
+                                <img src="/Users/Aditya/Downloads/worst-album-covers-2023.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Your Top Songs 2023</h2>
+                            <p>Playlist-Spotify</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(10)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-img">
+                                <img src="/Users/Aditya/Downloads/ab67616d00001e020ebf69c32c755aba5e839b8e.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Your Top Songs 2020</h2>
+                            <p>Playlist-Spotify</p>    
+                        </div>
+                    </div>
+                    <div onclick="erase(6)" class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab67706c0000da840a717a4e4c15864ab3950bf5.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Miley Cyrus</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab67616d00001e029db8d6d3c63f77a7cb0b78ca.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Mr Plenty</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/289c7f686f5b78ceeb224453cf9a15697a678a79.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>One Direction</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-img">
+                                <img src="/Users/Aditya/Downloads/ZGlkaWRpZGlkaWRpZGlkaQ==.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Discover Weekly</h2>
+                            <p>Playlist-Spotify</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5eb214f3cf1cbe7139c1e26ffbb.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>The Weekend</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/GHr9eXUWIAA13G5.jpg-large.jpeg"  width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>HRVY</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                    <div class="hero1-content">
+                        <div class="hero1-photo">
+                            <div class="hero1-content-imgcircle">
+                                <img src="/Users/Aditya/Downloads/ab67616100005174d5594e3ae145bbb2c096366d.jpeg" width="100%" height="100%">
+                            </div>
+                        </div>
+                        <div class="hero1-text">
+                            <h2>Charlie Puth</h2>
+                            <p>Artist</p>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero2">
+                <form id="main2" action="">
+                    <div class="header1">
+                        <div class="headerpart">
+                               <div class="change">
+                                <div onclick="back()"><</div>
+                                <div>></div>
+                               </div>
+                               <div class="headermenu">
+                                     <div>Explore Premium</div>
+                                     <div>                                      
+                                            <i class='bx bx-bell' ></i>
+                                     </div>
+                                     <div>
+                                        <i class='bx bx-user' ></i>
+                                     </div>
+                                     <div>
+                                        <i class='bx bx-broadcast'></i>
+                                     </div>
+                               </div>
+                         </div>
+                    </div>
+                    <div class="select-header">
+                        <div class="select-header-content">
+                            <div class="select-photo">
+                                <div class="select-content-img">
+                                    <img id="albumphoto" src="" width="100%" height="100%">
+                                </div>
+                            </div>
+                            <div class="select-text">
+                                <p>Public Playlist</p>
+                                <h2 id="p1">Liked Songs</h2>
+                                <p id="p2">Adi-198 songs</p>    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="songlistmenu">
+                           <div onclick="playaudio()" class="songslist">
+                                <div class="songlistno">
+                                    1
+                                </div>
+                                <div id="p3" class="songlistname">
+                                </div>
+                                <div class="songlistvideo">
+                                    Video
+                                </div>
+                           </div>
+                    </div>
+                    <div class="songlistmenu">
+                        <div class="songslist">
+                             <div class="songlistno">
+                                 2
+                             </div>
+                             <div id="p4" class="songlistname">
+                             </div>
+                             <div class="songlistvideo">
+                                 Video
+                             </div>
+                        </div>
+                 </div>
+                 <div class="songlistmenu">
+                    <div class="songslist">
+                         <div class="songlistno">
+                             3
+                         </div>
+                         <div id="p5" class="songlistname">
+                         </div>
+                         <div class="songlistvideo">
+                             Video
+                         </div>
+                    </div>
+             </div>
+             <div class="songlistmenu">
+                <div class="songslist">
+                     <div class="songlistno">
+                         4
+                     </div>
+                     <div id="p6" class="songlistname">
+                     </div>
+                     <div class="songlistvideo">
+                         Video
+                     </div>
+                </div>
+         </div>
+         <div class="songlistmenu">
+            <div class="songslist">
+                 <div class="songlistno">
+                     5
+                 </div>
+                 <div id="p7" class="songlistname">
+                 </div>
+                 <div class="songlistvideo">
+                     Video
+                 </div>
+            </div>
+            </div>
+                </form>
+                <form  id="main1" action="">
+                <div class="header">
+                    <div class="headerpart">
+                           <div class="change">
+                            <div><</div>
+                            <div onclick="forward()">></div>
+                           </div>
+                           <div class="headermenu">
+                                 <div>Explore Premium</div>
+                                 <div>
+                                    <i class='bx bx-bell' ></i>
+                                 </div>
+                                 <div>
+                                    <i class='bx bx-user' ></i>
+                                 </div>
+                                 <div>
+                                    <i class='bx bx-broadcast'></i>
+                                 </div>
+                           </div>
+                     </div>
+                     <div class="headerpart2">
+                        <div class="headerpart2-active">
+                             <div>All</div>
+                             <div>Music</div>
+                             <div>Podcast</div>
+                        </div>
+                     </div>
+                </div>
+                <main>
+                    <div onclick="erase(1)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Liked Songs</div>
+                    </div>
+                    <div onclick="erase(2)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ab6761610000e5eb8ae7f2aaa9817a704a87ea36.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">This is Justin Bieber</div>
+                    </div>
+                    <div onclick="erase(3)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/worst-album-covers-2023.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Your Top Liked Songs 2023</div>
+                    </div>
+                    <div onclick="erase(4)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ZGlkaWRpZGlkaWRpZGlkaQ==.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Discover Weekly</div>
+                    </div>
+                    <div onclick="erase(5)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ab6761610000e5ebc3c753851496854e29abff7a.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Selena Gomez</div>
+                    </div>
+                    <div onclick="erase(6)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ab67706c0000da840a717a4e4c15864ab3950bf5.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Miley Cyrus</div>
+                    </div>
+                    <div onclick="erase(7)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ab67616d0000b2736c0a7c1ea8020cb423180b95.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Daylist.Funny Beats</div>
+                    </div>
+                    <div onclick="erase(8)" class="firstmenu">
+                        <div class="firstmenu-photo">
+                            <img src="/Users/Aditya/Downloads/ab67616d00001e02bef074de9ca825bddaeb9f46.jpeg" width="100%" height="100%">
+                        </div>
+                        <div class="firstmenu-text">Rihanna</div>
+                    </div>
+                </main>
+                <div class="artspace">
+                    <div>
+                    <h2>Popular artist</h2>
+                    </div>
+                    <div>
+                    <p>Show all<p>
+                    </div>
+                </div>
+                <div class="art1">
+                    <div onclick="erase(5)" class="artdiv1">
+                        <div class="artdiv1-content">
+                             <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5ebc3c753851496854e29abff7a.jpeg" width="100%" height="100%">
+                             </div>
+                        </div>
+                        <div class="artdiv1-content2">
+                            <h2>Selena Gomez<h2>
+                            <p>Artist</p>
+                        </div>
+                    </div>
+                    <div onclick="erase(8)" class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab67616d00001e02bef074de9ca825bddaeb9f46.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>Rihanna<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                    <div onclick="erase(6)" class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab67706c0000da840a717a4e4c15864ab3950bf5.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>Miley Cyrus<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                    <div onclick="erase(2)" class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5eb8ae7f2aaa9817a704a87ea36.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>Justin Bieber<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="artspace">
+                    <div>
+                    <h2>Jump Back In</h2>
+                    </div>
+                    <div>
+                    <p>Show all<p>
+                    </div>
+                </div>
+                <div class="art2">
+                    <div class="artdiv2">
+                        <div class="artdiv2-content">
+                                 <div class="art2artist">
+                                    <img src="/Users/Aditya/Downloads/ab676161000051749c0f09a8247c54ecba74819d.jpeg" width="100%" height="100%">
+                                  </div>
+                        </div>
+                        <div class="artdiv2-content2">
+                            <h2>Chainsmoker<h2>
+                            <p>Artist</p>
+                        </div>
+                    </div>
+                    <div class="artdiv2">
+                        <div class="artdiv2-content">
+                            <div class="art2artist">
+                                <img src="/Users/Aditya/Downloads/ab67616d00001e02330f11fb125bb80b760f9e19.jpeg" width="100%" height="100%">
+                             </div>
+                   </div>
+                   <div class="artdiv2-content2">
+                       <h2>Lisa<h2>
+                       <p>Artist</p>
+                   </div>
+                    </div>
+                    <div class="artdiv2">
+                        <div class="artdiv2-content">
+                            <div class="art2artist">
+                                <img src="/Users/Aditya/Downloads/289c7f686f5b78ceeb224453cf9a15697a678a79.jpeg" width="100%" height="100%">
+                             </div>
+                   </div>
+                   <div class="artdiv2-content2">
+                       <h2>One Direction<h2>
+                       <p>Artist</p>
+                   </div>
+                    </div>
+                    <div class="artdiv2">
+                        <div class="artdiv2-content">
+                            <div class="art2artist">
+                                <img src="/Users/Aditya/Downloads/ab67616100005174d5594e3ae145bbb2c096366d.jpeg" width="100%" height="100%">
+                             </div>
+                   </div>
+                   <div class="artdiv2-content2">
+                       <h2>Bebe Rexha<h2>
+                       <p>Artist</p>
+                   </div>
+                    </div>
+                </div>
+                <div class="artspace">
+                    <div>
+                    <h2>Your Favourite artists</h2>
+                    </div>
+                    <div>
+                    <p>Show all<p>
+                    </div>
+                </div>
+                <div class="art1">
+                    <div class="artdiv1">
+                        <div class="artdiv1-content">
+                             <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5ebc3cd7dc428871e8985d62b9a.jpeg" width="100%" height="100%">
+                             </div>
+                        </div>
+                        <div class="artdiv1-content2">
+                            <h2>Ellie Goulding<h2>
+                            <p>Artist</p>
+                        </div>
+                    </div>
+                    <div class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/GHr9eXUWIAA13G5.jpg-large.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>HRVY<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                    <div class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5ebcf674ecb51186e6408cd18c0.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>Demi lovato<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                    <div class="artdiv1">
+                        <div class="artdiv1-content">
+                            <div class="art1artist">
+                                <img src="/Users/Aditya/Downloads/ab6761610000e5eb214f3cf1cbe7139c1e26ffbb.jpeg" width="100%" height="100%">
+                            </div>
+                       </div>
+                       <div class="artdiv1-content2">
+                           <h2>The Weekend<h2>
+                           <p>Artist</p>
+                       </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="hero3">
+                <div class="hero3-content">
+                    See what your friends are playing
+                </div>
+                <div class="findfriends">
+                    FIND FRIENDS
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--<audio id="songaudio" controls autoplay>
+        <source src="" type="audio/wav">
+   </audio>-->
+</body>
+</html>

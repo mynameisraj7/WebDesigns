@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <link rel="stylesheet" href="wordgamestyle.css">
+    <script>
+        min=0
+        max=4
+        c=Math.ceil(Math.random()*(max-min))+min-1
+        word=["apple","green","hyundai","cricket"];
+        hint=["fruit","color","car company","sports"];
+        p=[' ',' ',' ',' ' ,' ',' ',' ',' ',' '];
+        z=word[c].length+3
+        function chk()
+        {
+        ch=document.getElementById("lbl").value
+        document.getElementById("lbl").value=""
+        for(i=0;i<word[c].length;i++)
+        {
+            if(word[c].charAt(i)==ch)
+            {
+                document.getElementById("w"+(i+1)).innerHTML=word[c].charAt(i)
+                p[i]=ch;
+            }
+        }
+        if(word[c].charAt(i)==ch)
+        {
+            z--;
+            document.getElementById("c1").innerHTML=z
+        }
+        else{
+            z--;
+            document.getElementById("c1").innerHTML=z
+        }
+        if(z==0)
+        {
+            window.alert("Wrong Guess.Play Angain")
+            word[c]=""
+            hint[c]=""
+            min=0
+            max=4
+            c=Math.ceil(Math.random()*(max-min))+min-1
+            while(true)
+            {
+                if(word[c]=="")
+                {
+                    min=0
+                    max=4
+                    c=Math.ceil(Math.random()*(max-min))+min-1
+                }
+                else{
+                    break
+                }
+            }
+            z=word[c].length+3
+            document.getElementById("l1").innerHTML=hint[c]
+            document.getElementById("c1").innerHTML=z
+            for(i=0;i<word[c].length;i++)
+            {
+                document.getElementById("w"+(i+1)).style.display="grid"
+                document.getElementById("w"+(i+1)).innerHTML=""
+            }
+            for(;i<8;i++)
+            {
+                 document.getElementById("w"+(i+1)).style.display="none"
+            }
+            p=[' ',' ',' ',' ' ,' ',' ',' ',' ',' ']
+            wflg=0;
+        }
+        for(i=0;i<word[c].length;i++)
+        {
+            if(p[i]!=' ')
+            wflg=1;
+            else
+            {
+                wflg=0;
+                break
+            }
+        }
+        if(wflg==1)
+        {
+            window.alert("you win")
+            word[c]=""
+            hint[c]=""
+            min=0
+            max=4
+            c=Math.ceil(Math.random()*(max-min))+min-1
+            while(true)
+            {
+                if(word[c]=="")
+                {
+                    min=0
+                    max=4
+                    c=Math.ceil(Math.random()*(max-min))+min-1
+                }
+                else{
+                    break
+                }
+            }
+            z=word[c].length+3
+            document.getElementById("l1").innerHTML=hint[c]
+            document.getElementById("c1").innerHTML=z
+            for(i=0;i<word[c].length;i++)
+            {
+                document.getElementById("w"+(i+1)).style.display="grid"
+                document.getElementById("w"+(i+1)).innerHTML=""
+            }
+            for(;i<8;i++)
+            {
+                 document.getElementById("w"+(i+1)).style.display="none"
+            }
+            p=[' ',' ',' ',' ' ,' ',' ',' ',' ',' ']
+            wflg=0;
+        }
+        }
+        function setpage()
+        {
+            z=word[c].length+3
+            document.getElementById("l1").innerHTML=hint[c]
+            for(i=0;i<word[c].length;i++)
+            {
+                document.getElementById("w"+(i+1)).style.display="grid"
+            }
+            for(;i<8;i++)
+            {
+                document.getElementById("w"+(i+1)).style.display="none"      
+            }
+            document.getElementById("c1").innerHTML=z
+        }
+    </script>
+</head>
+<body onload="setpage()">
+    <div class="header">
+        <h1>Word Game</h1>
+    </div>
+    <div class="hero">
+        <div id="w1"></div>
+        <div id="w2"></div>
+        <div id="w3"></div>
+        <div id="w4"></div>
+        <div id="w5"></div>
+        <div id="w6"></div>
+        <div id="w7"></div>
+        <div id="w8"></div>
+    </div>
+    <div class="hint">
+        <h2>[Hint:<label id="l1">Fruit</label>]</h2>
+    </div>
+    <div class="inputbox">
+        <h2>Enter a character :</h2>
+        <input type="text" id="lbl" onkeyup="chk()">
+    </div>
+   <!--<div class="button">
+        <button onclick="chk()">Ok</button>
+    </div>-->
+    <div class="counter">
+        <h2>Chances Remaining : <label id="c1"></label></h2>
+    </div>
+</body>
+</html>

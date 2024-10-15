@@ -1,0 +1,565 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.hero{
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 1%;
+    width: 100%;
+    height: 100vh;
+}
+.hero1
+{
+    width:26%;
+    border-radius: 10px;
+    height: 100%;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.homesearch{
+    height: 13%;
+    width: 100%;
+    background-color: #222;
+    border-radius: 10px;
+}
+.homesearch1{
+    width:100%;
+    height:50%;
+    display: flex;
+}
+.homesearch1-img{
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    width: 18%;
+    padding-top: 12px;
+    cursor: pointer;
+}
+.homesearch1-text{
+    padding-top: 18px;
+    cursor: pointer;
+}
+.homesearch1-text:hover{
+    text-decoration: underline;
+}
+.homesearch2{
+    width:100%;
+    height:50%;
+    display: flex;
+}
+.homesearch2-img{
+    color: #999;
+    text-align: center;
+    font-size: 1.9rem;
+    width: 18%;
+    padding-top: 8px;
+    cursor: pointer;
+}
+.homesearch2-text{
+    color: #999;
+    padding-top: 14px;
+    cursor: pointer;
+}
+.homesearch2-text:hover{
+    text-decoration: underline;
+}
+.yourlibrary{
+    height: 86%;
+    width:100%;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.library{
+    height:60px;
+    width:100%;
+    color: #999;
+    padding:20px 5%;
+}
+.library:hover{
+    color: #fff;
+    transition: .6s;
+}
+.lib-button{
+    height:50px;
+    width:100%;
+}
+.lib-button1{
+    display: flex;
+    justify-content: space-between;
+    width:160px;
+    padding-left: 10px;
+}
+.lib-button1 div{
+    border-radius: 20px;
+    background-color: #444;
+    width:70px;
+    height: 35px;
+    padding-top: 8px;
+    font-size: .9rem;
+    cursor: pointer;
+    text-align: center;
+}
+.hero1-content{
+    width:100%;
+    height:60px;
+    cursor: pointer;
+    display: flex;
+}
+.hero1-photo{
+    width:16%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero1-content-img{
+    width:50px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.hero1-content-imgcircle{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.hero1-text{
+    width:80%;
+    height:100%;
+    padding-left: 5px;
+    padding-top: 12px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+.hero1-text h2{
+    font-size: .9rem;
+}
+.hero1-text p{
+    padding-top: 5px;
+    font-size: .8rem;
+}
+.hero1-content:hover{
+    background-color: #666;
+}
+.hero2
+{
+    width:53%;
+    border-radius: 10px;
+    background-color: #222;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.hero3
+{
+    width: 20%;
+    border-radius: 10px;
+    background-color: #222;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.header1{
+    background-color: transparent;
+    position: sticky;
+    background: rgb(33, 98, 33);
+    top:0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+}
+.select-header{
+    width: 100%;
+    height:200px;
+}
+.select-header-content{
+    width:100%;
+    height:100%;
+    cursor: pointer;
+    display: flex;
+    background: linear-gradient(rgb(33, 98, 33),#222);
+}
+.select-photo{
+    width:26%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select-content-img{
+    width:150px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.select-text{
+    width:70%;
+    height:100%;
+    padding-top: 80px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+.select-text h2{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.select-text p{
+    padding-top: 5px;
+    font-size: .8rem;
+}
+.songlistmenu{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+}
+.songslist{
+    width: 97%;
+    height:60px;
+    border-radius: 5px;
+    display: flex;
+}
+.songslist:hover{
+    background-color: #999;
+}
+.songlistno{
+    height:100%;
+    width:8%;
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.songlistname{
+    height:100%;
+    width:50%;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.songlistvideo{
+    height:100%;
+    width:40%;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.songlistvideo:hover{
+    text-decoration: underline;
+}
+
+
+
+
+.header{
+    background-color: transparent;
+    position: sticky;
+    top:0;
+    left: 0;
+    height: 130px;
+    width: 100%;
+    background: rgb(33, 98, 33);
+}
+.headerpart{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 2%;
+    height: 58%;
+    width: 100%;
+}
+.change{
+    width:80px;
+    height:50px;
+    display: flex;
+    justify-content: space-between;
+}
+.change div{
+    width: 35px;
+    height: 35px;
+    background-color: #444;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.headermenu{
+    width:280px;
+    height:35px;
+    display: flex;
+    justify-content: space-between;
+}
+.headermenu div:nth-child(1){
+    color:#444;
+    border-radius:15px;
+    width:150px;
+    height:35px;
+    background-color: #fff;
+    font-size: .9rem;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.headermenu div:nth-child(2){
+    background-color:#444;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 6px;
+}
+.headermenu div:nth-child(3){
+    background-color:#444;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 6px;
+}
+.headermenu div:nth-child(4){
+    background-color:#444;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 6px;
+}
+.headerpart2{
+     height: 42%;
+     width: 100%;
+     padding-left: 15px;
+     padding-top: 7px;
+}
+.headerpart2-active{
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    height:50px;
+}
+.headerpart2-active div:nth-child(1){
+    width:50px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 9px;
+    background-color:#444;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: .9rem;
+}
+.headerpart2-active div:nth-child(2){
+    width:70px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 9px;
+    background-color:#444;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: .9rem;
+}
+.headerpart2-active div:nth-child(3){
+    width:90px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 9px;
+    background-color:#444;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: .9rem;
+}
+main{
+    display:grid;
+    grid-template-columns:360px 360px;
+    grid-template-rows: repeat(4,50px);
+    grid-row-gap: 8px;
+    grid-column-gap: 10px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    padding-top:30px;
+    background: linear-gradient(rgb(33, 98, 33),#222,#222,#222);
+}
+.firstmenu{
+    width:100%;
+    height: 100%;
+    background-color: #444;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+.firstmenu:hover{
+    background-color: #999;
+}
+.firstmenu-photo{
+    width:15%;
+    height:100%;
+    background-color: powderblue;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px;
+}
+.firstmenu-text{
+    width:85%;
+    height:100%;
+    padding-left: 10px;
+    padding-top: 17px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+.art1{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 1%;
+    height: 300px;
+}
+.artdiv1{
+    height: 240px;
+    width:25%;
+    border-radius: 2px;
+    display: block;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.artdiv1:hover{
+    background-color: #666;
+}
+.artdiv1-content{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+}
+.art1artist{
+    width:160px;
+    height: 160px;
+    background-color: palevioletred;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.artdiv1-content2{
+    width: 100%;
+    height: 25%;
+}
+.artdiv1-content2 h2{
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-left: 18px;
+}
+.artdiv1-content2 p{
+    color:#c0bfbf;
+}
+.artspace{
+    width:100%;
+    height:60px;
+    display: flex;
+    justify-content: space-between;
+    padding:0px 2%;
+    align-items: center;
+}
+.artspace h2{
+    font-weight: 600;
+    font-size: 1rem;
+}
+.artspace h2:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.artspace p{
+    color:#acacac;
+}
+.artspace p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.art2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 1%;
+}
+.artdiv2{
+    height: 240px;
+    width:25%;
+    border-radius: 2px;
+    display: block;
+    padding-top: 12px;
+    cursor: pointer;
+}
+.artdiv2:hover{
+    background-color: #666;
+}
+.artdiv2-content{
+    width: 100%;
+    height: 67%;
+    display: flex;
+    justify-content: center;
+}
+.art2artist{
+    width:160px;
+    height: 150px;
+    background-color: greenyellow;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.artdiv2-content2{
+    width: 100%;
+    height: 33%;
+}
+.artdiv2-content2 h2{
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-left: 18px;
+}
+.artdiv2-content2 p{
+    color:#c0bfbf;
+}
+.hero3-content{
+    height:50px;
+    width: 200px;
+    text-align: center;
+    font-size:1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+.findfriends{
+    width:170px;
+    height: 35px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .4px solid #fff;
+    outline: .5px solid #fff;
+    margin-top: 40px;
+    cursor: pointer;
+}

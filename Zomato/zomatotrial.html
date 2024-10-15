@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <link rel="stylesheet" href="zomatotrial.css">
+    <script>
+        fname=[["Butter Paneer","Butter Naan","Mutton Biryani","Mix Veg","Masala Dosa","Mushroom Masala","White Kofta","Fried Rice","Chilli Paneer"],
+                   ["Kulcha","Tawa Roti","Manchurian","Palak Corn","Plain Dosa","Itly Sambar","Kiwi Moijito","Palak Paneer","Egg Rice"],
+                   ["Chicken Biryani","Aloo Dum","Matar Paneer","Tomato Soup","Burger","Double Burst Pizza","Dal Makhani","Rajma","Indonesian Curry"]]
+            fimg=[["/Users/Aditya/Downloads/Paneer-butter-masala-recipe-3-500x500.jpg","/Users/Aditya/Downloads/naan-recipe-2-500x500.webp","/Users/Aditya/Downloads/53094793.cms.webp",
+                  "/Users/Aditya/Downloads/Mixed-Veg-Sabzi-500x500.jpg","/Users/Aditya/Downloads/54289752.cms.webp","/Users/Aditya/Downloads/Mushroom-Masala-Thumbnail.jpg",
+                  "/Users/Aditya/Downloads/20211006_1120533-e1634060374186.jpg.webp","/Users/Aditya/Downloads/Chicken-Fried-Rice-square-FS-.jpg","/Users/Aditya/Downloads/Chilli-Chana-Recipe.jpg"],
+                  ["/Users/Aditya/Downloads/images-3.jpeg","/Users/Aditya/Downloads/images-4.jpeg","/Users/Aditya/Downloads/shutterstock_1650877375-600x600.jpg",
+                  "/Users/Aditya/Downloads/palak-corn-recipe.webp","/Users/Aditya/Downloads/images-5.jpeg","/Users/Aditya/Downloads/idli-sambar-1-500x500.webp",
+                  "/Users/Aditya/Downloads/Kiwi-Mojito-SQUARE.jpg","/Users/Aditya/Downloads/palak-paneer-recipe-featured.webp","/Users/Aditya/Downloads/images-6.jpeg"],
+                  ["/Users/Aditya/Downloads/Chicken-Biryani-Recipe.jpg","/Users/Aditya/Downloads/IMG_0772-1024x1024.jpg","/Users/Aditya/Downloads/Matar-Paneer.jpg",
+                  "/Users/Aditya/Downloads/Roasted-Tomato-Soup-bowl-500x500.webp","/Users/Aditya/Downloads/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
+                  "/Users/Aditya/Downloads/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg","/Users/Aditya/Downloads/Dal-Makhani-edited-photos-5-of-6.webp",
+                  "/Users/Aditya/Downloads/Authentic-Punjabi-Rajma-Recipe.jpg","/Users/Aditya/Downloads/plant-based-vegan-indonesian-curry-with-green-beans-and-tofu-thumb-1.jpg"]]
+            frate=[["210","110","270","220","120","250","240","180","150"],
+                   ["120","40","160","230","150","100","120","240","170"],
+                   ["280","180","250","100","120","160","180","160","280"]]
+            rname=["Junction","Blue Diamond","Jiva"]
+            rdesc=["4.3 star Rating Junction is a multicusine Restaurant.","3.0  Star Rating Blue Diamond is located in Bistupur","4.6 star Rating Jiva is located in Sakchi "]
+            rphonenumber=[" 7645289560"," 7300458790"," 9410337890"]
+            rlocation=["Plot-23,Road no-9,Bistupur,Near Raj hotel,Jamshedpur","Plot-no:12,Road-no-22,Sakchi,Near Croma,Jamshedpur","Plot no-45,Road no-10,Kalimati Road,Jamshedpur"]
+            frimg=["/Users/Aditya/Downloads/rf1c-view-Sukh-Sagar-2022-09-2.jpg","/Users/Aditya/Downloads/the-blue-diamond-restaurant.jpg","/Users/Aditya/Downloads/cba7cef546c17c5c.jpg"]
+            function setpage()
+            {
+                document.getElementById("m4").style.display="none"
+                document.getElementById("main2").style.display="none"
+                document.getElementById("main3").style.display="none"
+            }
+            function searchhotel()
+            {
+                c=0
+                s=document.getElementById("hsb").value
+                for(i=0;i<3;i++)
+                {
+                    if(s.toLowerCase()==rname[i].toLowerCase())
+                    {
+                        document.getElementById("imgres").src=frimg[i]
+                        document.getElementById("restd").innerHTML=rdesc[i]
+                        document.getElementById("restd-phonenumber").innerHTML=rphonenumber[i]
+                        document.getElementById("restd-location").innerHTML=rlocation[i]
+                        document.getElementById("m1").style.display="none"
+                        document.getElementById("m2").style.display="none"
+                        document.getElementById("m3").style.display="none"
+                        document.getElementById("m4").style.display="grid"
+                        document.getElementById("main2").style.display="grid"
+                        for(j=0;j<9;j++)
+                        {
+                              document.getElementById("lblfn"+j).innerHTML=fname[i][j]
+                              document.getElementById("lblfi"+j).src=fimg[i][j]
+                              document.getElementById("lblp"+j).innerHTML=frate[i][j]
+                        }
+                         c=1
+                         break
+                    }
+                }    
+                if(c==0)
+                {
+                     window.alert("There is no Restaurant of this name in the city")
+                }
+            }
+            function add(n)
+            {
+                num=parseInt(document.getElementById("lbl"+n).innerHTML)
+                z=num+1
+                document.getElementById("lbl"+n).innerHTML=z
+            }
+            function sub(n)
+            {
+                num=parseInt(document.getElementById("lbl"+n).innerHTML)
+                if(num>0)
+                {
+                     z=num-1
+                }
+                document.getElementById("lbl"+n).innerHTML=z
+            }
+            function placeholder()
+            {
+                c=1
+                k=0
+                 document.getElementById("main3").style.display="grid"
+                 for(j=0;j<9;j++)
+                 {
+                    x=parseInt(document.getElementById("lbl"+j).innerHTML)
+                    if(x>0)
+                    {
+                            document.getElementById("ts"+k).innerHTML=c
+                            document.getElementById("tfn"+k).innerHTML=document.getElementById("lblfn"+j).innerHTML
+                            document.getElementById("tfr"+k).innerHTML=frate[i][j]
+                            document.getElementById("tfq"+k).innerHTML=x
+                            document.getElementById("tftq"+k).innerHTML=parseInt(frate[i][j])*x
+                            document.getElementById("tr"+(c)).style.backgroundColor="rgb(222, 222, 222)"
+                            k=k+1
+                            c=c+1
+                    }
+                 }
+                 document.getElementById("ts"+(k-1)).style.borderBottomLeftRadius="35px"
+                   document.getElementById("tftq"+(k-1)).style.borderBottomRightRadius="35px"
+                 for(i=c;i<=9;i++)
+                 {
+                    const myDiv= document.getElementById("tr"+(i));
+                    const parent=myDiv.parentNode;
+                    parent.removeChild(myDiv);
+                 }
+            }
+    </script>
+</head>
+<body onload="setpage()">
+    <header class="header">
+        <a class="logo" href="#">Get the App</a>
+        <div class="navbar">
+            <a href="#">Investors Relations</a>
+            <a href="#">Add Restaurants</a>
+            <a href="#">Log In</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </header>
+    <section class="home">
+        <div class="homesearch">
+            <div class="hometext">
+                <h1>Zomato</h1>
+                <p>Discover the best food & drinks</p>
+            </div>
+            <input type="text" id="hsb" placeholder="  Search for a restaurant, cuisine or a dish....">
+            <button onclick="searchhotel()">Ok</button>
+        </div>
+    </section>
+    <section id="m4">
+        <div class="restdisc">
+                 <div class="restdisc-img">
+                       <img id="imgres" width="100%" height="100%">
+                 </div>
+                 <div class="restdisc-discription">
+                     <label id="restd"></label>
+                     <div class="restdisc-phonenumber">Phone number :
+                        <label id="restd-phonenumber"></label>
+                     </div>
+                     <div class="restdisc-location">Location:
+                        <label id="restd-location"></label>
+                    </div>
+                 </div>
+        </div>
+    </section>
+    <section id="m1">
+        <div class="hero-div">
+            <div>
+                <img src="/Users/Aditya/Downloads/160929101749-essential-spanish-dish-paella-phaidon.jpg" width="100%" height="70%">
+                <h3>Order Online</h3>
+                <h2>Stay home and order to your doorstep</h2>
+            </div>
+            <div>
+                <img src="/Users/Aditya/Downloads/Clubbing-GQ-9Jan16_rex_b.jpg.webp" width="100%" height="70%">
+                <h3>Nightlife & Clubs</h3>
+                <h2>Explore the city's top nightlife outlets</h2>
+            </div>
+            <div>
+                <img src="/Users/Aditya/Downloads/content6139.jpg" width="100%" height="70%">
+                <h3>Dining</h3>
+                <h2>View the city's favourite dining venues</h2>
+            </div>
+        </div>
+    </section>
+    <section id="m2">
+        <div class="hero-div2">
+           <h1>Collections</h1>
+          <h2>Explore curated lists of top restaurants, cafes, pubs, and bars in Jamshedpur, based on trends<h2>
+          </div>
+        <div class="hero-div2-content">
+            <div>
+                <img src="/Users/Aditya/Downloads/modern-cafe-interior-wooden-tables-green-plants-creating-cozy-atmosphere-soft-lighting-stylish-decor-enhance-318498443.jpg.webp" width="100%" height="100%">
+                <div class="hero-div2-text">
+                    <h2>Top Trending Spots</h2>
+                    <p>30 places</p>
+                </div>
+            </div>
+            <div>
+               <img src="/Users/Aditya/Downloads/c00d71bc78accc4a3381e27e4e4a42f4.jpg" width="100%" height="100%">
+               <div class="hero-div2-text">
+                <h2>Newly Opened Places</h2>
+                <p>5 places</p>
+               </div>
+            </div>
+            <div>
+                <img src="/Users/Aditya/Downloads/pouring_a_glass_of_champagne_x1.jpg" width="100%" height="100%">
+                <div class="hero-div2-text">
+                    <h2>Romantic Dining Places</h2>
+                    <p>27 places</p>
+                </div>
+            </div>
+            <div>
+                <img src="/Users/Aditya/Downloads/__opt__aboutcom__coeus__resources__content_migration__brides__public__brides-services__production__2019__04__23__5cbf63117cf58275d4eeb424_ana-and-jerome-7f1361880bca4edeb9dedfad10ccf323.jpg" width="100%" height="100%">
+                <div class="hero-div2-text">
+                    <h2>Best Insta Worthy Places</h2>
+                    <p>16 places</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="m3">
+        <div class="hero-div3">
+        <h2>Popular localities in and around Jamshedpur</h2>   
+        </div> 
+        <main id="main1">
+            <div class="d1">
+                <h2>Bistupur</h2>
+                <h3>361 Places</h3>
+            </div>
+            <div class="d2">
+                <h2>Sakchi</h2>
+                <h3>258 Places</h3>
+            </div>
+            <div class="d3">
+                <h2>Mango</h2>
+                <h3>124 Places</h3>
+                </div>
+            <div class="d4">
+               <h2>Adityapupur</h2>
+               <h3>30 Places</h3>
+            </div>
+            <div class="d5">
+                <h2>Chandil Locality</h2>
+                <h3>14 Places</h3>
+            </div>
+            <div class="d6"><h2>
+                Birsanagar</h2>
+                <h3>53 Places</h3>
+            </div>
+            <div class="d7">
+                <h2>Gamahria</h2>
+                <h3>57 Places</h3>
+            </div>
+            <div class="d8">
+                <h2>Telco Colony</h2>
+                <h3>45 Places</h3>
+            </div>
+            <div class="d9">
+                <h2>Golmuri</h2>
+                <h3>44 Places</h3>
+            </div>
+            <div class="d10">
+                <h2>Sonari</h2>
+                <h3>128 Places</h3>
+            </div>
+            <div class="d11">
+                <h2>Burma Mines</h2>
+                <h3>21 Places</h3>
+            </div>
+            <div class="d12">
+                <h2>Govindpur</h2>
+                <h3>9 Places</h3>
+            </div>
+        </main>
+    </section>
+    <main id="main2">
+        <div>
+              <div class="g1">
+                    <img id="lblfi0" src="/Users/Aditya/Downloads/Paneer-butter-masala-recipe-3-500x500.jpg" width="100%" height="80%">
+                    <Label id="lblfn0">Butter Paneer</label>
+                    <label id="lblp0">220</label>
+              </div>
+              <div class="h1">
+                     <button style="width:30px;height:30px;font-size:20px;font-weight:20px;" onclick="sub(0)">-</button>
+                     <label id="lbl0">0</label>
+                     <button style="width:30px;height:30px;font-size:20px"onclick="add(0)">+</button>
+              </div>
+        </div>
+        <div>
+                <div class="g2">
+                        <img id="lblfi1" src="/Users/Aditya/Downloads/naan-recipe-2-500x500.webp" width="100%" height="80%">
+                        <Label id="lblfn1">Butter Naan</Label>
+                        <label id="lblp1">220</label>
+                </div>
+                <div class="h2">
+                     <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(1)">-</button>
+                     <label id="lbl1">0</label>
+                     <button style="width:30px;height:30px;font-size:20px"onclick="add(1)">+</button>
+                </div>
+        </div>
+        <div>
+                 <div class="g3">
+                         <img id="lblfi2" src="/Users/Aditya/Downloads/53094793.cms.webp" width="100%" height="80%">
+                          <Label id="lblfn2">Mutton Biryani</Label>
+                          <label id="lblp2">220</label>
+                 </div>
+                 <div class="h3">
+                         <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(2)">-</button>
+                         <label id="lbl2">0</label>
+                         <button style="width:30px;height:30px;font-size:20px"onclick="add(2)">+</button>
+                 </div>
+        </div>
+        <div>
+                    <div class="g4">
+                           <img id="lblfi3" src="/Users/Aditya/Downloads/Mixed-Veg-Sabzi-500x500.jpg" width="100%" height="80%">
+                           <Label id="lblfn3">Mix Veg</Label>
+                           <label id="lblp3">220</label>
+                    </div>
+                    <div class="h4">
+                             <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(3)">-</button>
+                             <label id="lbl3">0</label>
+                             <button style="width:30px;height:30px;font-size:20px"onclick="add(3)">+</button>
+                    </div>
+        </div>
+        <div>
+                    <div class="g5">
+                             <img id="lblfi4" src="/Users/Aditya/Downloads/54289752.cms.webp" width="100%" height="80%">
+                             <Label id="lblfn4">Masala Dosa</Label>
+                             <label id="lblp4">220</label>
+                    </div>
+                    <div class="h5">
+                         <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(4)">-</button>
+                         <label id="lbl4">0</label>
+                         <button style="width:30px;height:30px;font-size:20px"onclick="add(4)">+</button>
+                    </div>
+        </div>
+        <div>
+                    <div class="g6">
+                         <img id="lblfi5" src="/Users/Aditya/Downloads/Mushroom-Masala-Thumbnail.jpg" width="100%" height="80%">
+                         <Label id="lblfn5">Mushroom Masala</Label>
+                         <label id="lblp5">220</label>
+                    </div>
+                    <div class="h6">
+                            <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(5)">-</button>
+                            <label id="lbl5">0</label>
+                            <button style="width:30px;height:30px;font-size:20px"onclick="add(5)">+</button>
+                     </div>
+        </div>
+        <div>
+                <div class="g7">
+                    <img id="lblfi6" src="/Users/Aditya/Downloads/20211006_1120533-e1634060374186.jpg.webp" width="100%" height="80%">
+                    <Label id="lblfn6">White Kofta</Label>
+                    <label id="lblp6">220</label>
+                </div>
+                <div class="h7">
+                        <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(6)">-</button>
+                         <label id="lbl6">0</label>
+                         <button style="width:30px;height:30px;font-size:20px"onclick="add(6)">+</button>
+                 </div>
+        </div>
+        <div>
+                  <div class="g8">
+                        <img id="lblfi7" src="/Users/Aditya/Downloads/Chicken-Fried-Rice-square-FS-.jpg" width="100%" height="80%">
+                        <Label id="lblfn7">Fried Rice</Label>
+                        <label id="lblp7">220</label>
+                  </div>
+                  <div class="h8">
+                         <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(7)">-</button>
+                         <label id="lbl7">0</label>
+                         <button style="width:30px;height:30px;font-size:20px"onclick="add(7)">+</button>
+                  </div>
+        </div>
+        <div>
+                <div class="g9">
+                    <img id="lblfi8" src="/Users/Aditya/Downloads/Chilli-Chana-Recipe.jpg" width="100%" height="80%">
+                    <Label id="lblfn8">Chilli Paneer</Label>
+                    <label id="lblp8">220</label>
+                </div>
+                <div class="h9">
+                      <button style="width:30px;height:30px;font-size:20px;font-weight:20px" onclick="sub(8)">-</button>
+                      <label id="lbl8">0</label>
+                      <button style="width:30px;height:30px;font-size:20px"onclick="add(8)">+</button>
+                </div>
+        </div>
+        <div style="margin-top:2rem;margin-left:20rem;">
+            <button onclick="placeholder()"style="width:28rem;height:4rem;border-radius:10px;border-color:none;font-size:30px;">Place Order</button>
+        </div>
+    </main>
+    <main id="main3">
+        <table border="3px" style="margin-top:40px;margin-left:150px;border-radius:35px;font-family:sans-serif;font-size:1.4rem;overflow:hidden" width="80%">
+            <tr height="70px" style="background-color:rgb(192, 192, 192);">
+                <td style="text-align:center;border-top-left-radius: 35px;"  width="10%">Sr. No.</td>
+                <td style="text-align:center" width="20%">Food Name</td>
+                <td style="text-align:center"  width="20%">Rate</td>
+                <td style="text-align:center"  width="10%">Quantity</td>
+                <td style="text-align:center;border-top-right-radius: 35px;" width="10%">Total Rate</td>
+            </tr>
+            <tr  id="tr1" height="70px">
+                <td style="text-align:center" id="ts0" width="10%"></td>
+                <td style="text-align:center" id="tfn0" width="20%"></td>
+                <td style="text-align:center" id="tfr0" width="20%"></td>
+                <td style="text-align:center" id="tfq0" width="10%"></td>
+                <td style="text-align:center" id="tftq0" width="10%"></td>
+            </tr>
+            <tr id="tr2" height="70px">
+                <td style="text-align:center" id="ts1" width="10%"></td>
+                <td style="text-align:center" id="tfn1" width="20%"></td>
+                <td style="text-align:center" id="tfr1" width="20%"></td>
+                <td style="text-align:center" id="tfq1" width="10%"></td>
+                <td style="text-align:center" id="tftq1" width="10%"></td>
+            </tr>
+            <tr id="tr3" height="70px">
+                <td style="text-align:center" id="ts2" width="10%"></td>
+                <td style="text-align:center" id="tfn2" width="20%"></td>
+                <td style="text-align:center" id="tfr2" width="20%"></td>
+                <td style="text-align:center" id="tfq2" width="10%"></td>
+                <td style="text-align:center" id="tftq2" width="10%"></td>
+            </tr>
+            <tr id="tr4" height="70px">
+                <td style="text-align:center" id="ts3" width="10%"></td>
+                <td style="text-align:center" id="tfn3" width="20%"></td>
+                <td style="text-align:center" id="tfr3" width="20%"></td>
+                <td style="text-align:center" id="tfq3" width="10%"></td>
+                <td style="text-align:center" id="tftq3" width="10%"></td>
+            </tr>
+            <tr id="tr5" height="70px">
+                <td style="text-align:center" id="ts4" width="10%"></td>
+                <td style="text-align:center" id="tfn4" width="20%"></td>
+                <td style="text-align:center" id="tfr4" width="20%"></td>
+                <td style="text-align:center" id="tfq4" width="10%"></td>
+                <td style="text-align:center" id="tftq4" width="10%"></td>
+            </tr>
+            <tr id="tr6" height="70px">
+                <td style="text-align:center" id="ts5" width="10%"></td>
+                <td style="text-align:center" id="tfn5" width="20%"></td>
+                <td style="text-align:center" id="tfr5" width="20%"></td>
+                <td style="text-align:center" id="tfq5" width="10%"></td>
+                <td style="text-align:center" id="tftq5" width="10%"></td>
+            </tr>
+            <tr id="tr7" height="70px">
+                <td style="text-align:center" id="ts6" width="10%"></td>
+                <td style="text-align:center" id="tfn6" width="20%"></td>
+                <td style="text-align:center" id="tfr6" width="20%"></td>
+                <td style="text-align:center" id="tfq6" width="10%"></td>
+                <td style="text-align:center" id="tftq6" width="10%"></td>
+            </tr>
+            <tr id="tr8" height="70px">
+                <td style="text-align:center" id="ts7" width="10%"></td>
+                <td style="text-align:center" id="tfn7" width="20%"></td>
+                <td style="text-align:center" id="tfr7" width="20%"></td>
+                <td style="text-align:center" id="tfq7" width="10%"></td>
+                <td style="text-align:center" id="tftq7" width="10%"></td>
+            </tr>
+            <tr id="tr9" height="70px">
+                <td style="text-align:center" id="ts8" width="10%"></td>
+                <td style="text-align:center" id="tfn8" width="20%"></td>
+                <td style="text-align:center" id="tfr8" width="20%"></td>
+                <td style="text-align:center" id="tfq8" width="10%"></td>
+                <td style="text-align:center" id="tftq8" width="10%"></td>
+            </tr>
+        </table>
+</main>
+</body>
+</html>
